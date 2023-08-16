@@ -58,7 +58,13 @@
                 .then(response => response.text())
                 .then(result => {
                     console.log(result);
-                    showPage(JSON.parse(result).result);
+                    const parsed = JSON.parse(result).result;
+                    if (!document.startViewTransition) {
+                        showPage(parsed);
+                        return;
+                    }
+                    // With View Transitions:
+                    const transition = document.startViewTransition(() => showPage(parsed));
                 })
                 .catch(error => {
                     console.log('error', error);
