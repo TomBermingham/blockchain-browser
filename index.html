@@ -69,9 +69,13 @@
         const showPage = (content) => {
             const decoded = Web3.utils.hexToAscii(content).replaceAll('\x00', '').trim();
             let arr = decoded.split("<");
-            arr.shift();
-            const cleaned = arr.join("<");
-            document.body.innerHTML = "<" + cleaned;
+            if(arr.length > 0){
+                arr[0] = "";
+                const cleaned = arr.join("<");
+                document.body.innerHTML = cleaned;
+            }else{
+                document.body.innerHTML = decoded;
+            }
         }
 
         const urlParams = new URLSearchParams(window.location.search);
