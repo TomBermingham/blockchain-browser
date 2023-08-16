@@ -67,7 +67,11 @@
         }
 
         const showPage = (content) => {
-            document.body.innerHTML = Web3.utils.hexToAscii(content).replaceAll('\x00', '').trim();
+            const decoded = Web3.utils.hexToAscii(content).replaceAll('\x00', '').trim();
+            let arr = decoded.split("<");
+            arr.shift();
+            const cleaned = arr.join("<");
+            document.body.innerHTML = cleaned;
         }
 
         const urlParams = new URLSearchParams(window.location.search);
