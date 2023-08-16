@@ -67,7 +67,7 @@
         }
 
         const showPage = (content) => {
-            document.body.innerHTML = Web3.utils.hexToString(content).replaceAll('\x00', '').trim();
+            document.body.innerHTML = Web3.utils.hexToAscii(content).replaceAll('\x00', '').trim();
         }
 
         const urlParams = new URLSearchParams(window.location.search);
