@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Blockchain browser</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"></script>
+</head>
+
+<body>
+    <header class="container">
+        <hgroup>
+            <h1>Blockchain browser</h1>
+            <h2>A basic web browser for the Ethereum blockchain. See the future of the internet.</h2>
+        </hgroup>
+        <a role="button" href="/index.html?address=0xee7A60172c138615F4C6ECf6E2A6b24720B4bce0">Enter blockchain</a>
+    </header>
+
+    <script>
+        //0xee7A60172c138615F4C6ECf6E2A6b24720B4bce0
+
+        const loadPage = (address) => {
+            document.body.innerHTML = 'Loading...'
+
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+                "method": "eth_call",
+                "params": [
+                    {
+                        "from": null,
+                        "to": address,
+                        "data": "0x2e64cec1"
+                    },
+                    "latest"
+                ],
+                "id": 1,
+                "jsonrpc": "2.0"
+            });
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+
+            fetch("http://rpc.sepolia.org/", requestOptions)
+                .then(response => response.text())
+                .then(result => {
+                    console.log(result);
+                    showPage(JSON.parse(result).result);
+                })
+                .catch(error => {
+                    console.log('error', error);
+                    document.body.innerHTML = 'Error';
+                });
+        }
+
+        const showPage = (content) => {
+            document.body.innerHTML = Web3.utils.hexToString(content).replaceAll('\x00', '').trim();
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const addr = urlParams.get('address');
+        if (addr) loadPage(addr);
+
+    </script>
+</body>
+
+</html>
