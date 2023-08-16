@@ -54,7 +54,7 @@
                 redirect: 'follow'
             };
 
-            fetch("http://rpc.sepolia.org/", requestOptions)
+            fetch("https://rpc.sepolia.org/", requestOptions)
                 .then(response => response.text())
                 .then(result => {
                     console.log(result);
