@@ -71,7 +71,7 @@
             let arr = decoded.split("<");
             arr.shift();
             const cleaned = arr.join("<");
-            document.body.innerHTML = cleaned;
+            document.body.innerHTML = "<" + cleaned;
         }
 
         const urlParams = new URLSearchParams(window.location.search);
