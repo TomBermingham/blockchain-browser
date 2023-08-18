@@ -1,5 +1,6 @@
 # Blockchain Browser
 https://tombermingham.github.io/blockchain-browser/
+Note: the test network is not 100% reliable, refresh the page if you get an error.
 
 ### Intro
 The web started with documents and hyperlinks. You could use a browser to explore. This is missing in Web3.
