@@ -6,6 +6,7 @@ Note: the test network is not 100% reliable, refresh the page if you get an erro
 The web started with documents and hyperlinks. You could use a browser to explore. This is missing in Web3.
 You can do this by building a "browser in a browser".
 Smart contracts serve HTML, the contract addresses become URLs.
+The long term goal is to either make a dedicated browser or make it possible in Chrome.
 
 ### Contract list
 Hello world: 0xee7A60172c138615F4C6ECf6E2A6b24720B4bce0
