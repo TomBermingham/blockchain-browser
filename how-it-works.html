@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>How it works</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"></script>
+</head>
+
+<body class="container">
+    <article>
+        <header>
+            <h3>How it works</h3>
+        </header>
+        <h5>Overview</h5>
+        <p>
+            There are two parts: the client and the smart contract.
+        </p>
+        <h5>The smart contract</h5>
+        <p>
+            The smart contract has a function called retrieve() which delivers a string of HTML.
+        </p>
+        <pre>
+            <code>
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity >=0.8.2 <0.9.0;
+
+/**
+ * @title Page
+ * @dev Store & retrieve value in a variable
+ */
+contract Page {
+
+    string text = '&#x3C;article&#x3E; &#x3C;header&#x3E; &#x3C;h3&#x3E;Example&#x3C;/h3&#x3E;&#x3C;/header&#x3E; &#x3C;p&#x3E;Here is some content.&#x3C;/p&#x3E; &#x3C;/article&#x3E;';
+
+    /**
+     * @dev Return value 
+     * @return value of 'text'
+     */
+    function retrieve() public view returns (string memory){
+        return text;
+    }
+}
+            </code>
+        </pre>
+        <h5>The client</h5>
+        <p>
+            The root page acts as a hypermedia client (web browser). Its job is to read and display the smart contract's HTML to the user.
+        </p>
+        <footer>
+            <cite>
+                This page is brought to you by an Ethereum smart contract.
+            </cite>
+        </footer>
+    </article>
+</body>
+
+</html>
