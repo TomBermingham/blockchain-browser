@@ -2,7 +2,19 @@
 https://tombermingham.github.io/blockchain-browser/
 Note: the test network is not 100% reliable, refresh the page if you get an error.
 
-### Intro
+### An intuitive internet
+Imagine as a developer
+- you could create a website on "the internet" instead of finding a specific hosting service,
+- make a website by going to the URL you want to have, and pressing "create"
+- update a website by viewing source, making a change, then pressing save
+- zero recurring hosting costs
+- no need to integrate with authentication or payment services  
+And as a user
+- you never had to login or remember passwords again, you're logged into every website by default
+- you could pay for anything by clicking a button (and know it's secure),
+- no more remembering to cancel free trails
+
+### Back to the foundations of the web
 The web started with documents and hyperlinks. You could use a browser to explore. This is missing in Web3.
 You can do this by building a "browser in a browser".
 Smart contracts serve HTML, the contract addresses become URLs.
