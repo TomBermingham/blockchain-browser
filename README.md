@@ -7,9 +7,11 @@ Imagine the internet as a child would imagine it:
 - you create a website on "the internet" instead of finding a specific provider like AWS,
 - you make a website by going to the URL you want to have and pressing "create",
 - you update a website by viewing source, making a change, then pressing save.
+</p>
 And on top of this you have:
 - zero recurring hosting costs,
 - no need to integrate with authentication or payment services.
+</p>
 And as a user:
 - you never have to login or remember passwords again, you're logged into every website by default,
 - you can pay for anything by clicking a button (and know it's secure),
