@@ -14,14 +14,23 @@ And on top of this you have:
 ---
 And as a user:
 - you never have to login or remember passwords again, you're logged into every website by default,
-- you can pay for anything by clicking a button (and know it's secure),
-- no more remembering to cancel free trails.
+- you can pay for anything by clicking a button (and know it's secure).
 
 ### Back to the foundations of the web
-The web started with documents and hyperlinks. You could use a browser to explore. This is missing in Web3.
-You can do this by building a "browser in a browser".
-Smart contracts serve HTML, the contract addresses become URLs.
-The long term goal is to either make a dedicated browser or make it possible in Chrome.
+The World Wide Web started with documents and hyperlinks. You could use a browser to explore. Web3 applications in 2023 look nothing like this. You typically have a standard web application with a client and a server, which happens to contact the blockchain for certain tasks, such as payments.  
+We can bring the basics of the original web to the blockchain by serving HTML directly. The browser will send a request to the blockchain-based network (such as Ethereum) and receive HTML in return.  
+This completely eliminates the need for an old-style web server.
+
+### How it works
+Ethereum based networks run on smart contracts. These are written in a language called Solidity. The contracts have functions and they run entirely on the network.  
+We access the network by sending a POST request to a node.  
+So we need to:
+1. Take a URL as input
+2. Send a POST request to the node
+3. Receive HTML in return
+4. Display the HTML
+This will not work natively in Chrome because URL navigation sends a GET request. So we will build a custom browser.  
+Tauri (the Rust equivalent of Electron) is a good choice for this because it's built on Chromium so it's built to render HTML. We just need to add a nav bar at the top, then render the returned HTML below.
 
 ### Contract list
 Here are the addresses of some sites on the Sepolia network:
