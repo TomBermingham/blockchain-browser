@@ -21,7 +21,7 @@ The World Wide Web started with documents and hyperlinks. You could use a browse
 We can bring the basics of the original web to the blockchain by serving HTML directly. The browser will send a request to the blockchain-based network (such as Ethereum) and receive HTML in return.  
 This completely eliminates the need for an old-style web server.
 
-### How it works
+### How to serve a Web3-page
 Ethereum based networks run on smart contracts. These are written in a language called Solidity. The contracts have functions and they run entirely on the network.  
 We access the network by sending a POST request to a node.  
 So we need to:
@@ -29,6 +29,8 @@ So we need to:
 2. Send a POST request to the node
 3. Receive HTML in return
 4. Display the HTML
+
+### Why we'll need a new browser
 This will not work natively in Chrome because URL navigation sends a GET request. So we will build a custom browser.  
 Tauri (the Rust equivalent of Electron) is a good choice for this because it's built on Chromium so it's built to render HTML. We just need to add a nav bar at the top, then render the returned HTML below.
 
