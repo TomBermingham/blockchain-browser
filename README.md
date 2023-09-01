@@ -1,6 +1,5 @@
 # Blockchain Browser
 https://tombermingham.github.io/blockchain-browser/
-Note: the test network is not 100% reliable, refresh the page if you get an error.
 
 ### An intuitive internet
 Imagine the internet as a child would imagine it:
