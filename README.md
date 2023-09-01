@@ -33,6 +33,13 @@ So we need to:
 This will not work natively in Chrome because URL navigation sends a GET request. So we will build a custom browser.  
 Tauri (the Rust equivalent of Electron) is a good choice for this because it's built on Chromium so it's built to render HTML. We just need to add a nav bar at the top, then render the returned HTML below.
 
+### Browser in a browser version
+The new browser is not ready yet. In the meantime you can access websites on the blockchain via the "browser in a browser" version here: https://tombermingham.github.io/blockchain-browser/ 
+When you press enter blockchain it takes you to a page delivered by a smart contract.
+
+### Inspiration
+This project was insprired by [Hypermedia Systems ](https://hypermedia.systems/). The book describes some of the foundational ideas that power the web, including the concept of Hypermedia. I realised after reading this that hypermedia is missing from Web3 applications. The aim of this project is to create a hypermedia client (web browser) so Web3 applications become as simple to build and use as any other web application, or even simpler.
+ 
 ### Contract list
 Here are the addresses of some sites on the Sepolia network:
 - Hello world: 0xee7A60172c138615F4C6ECf6E2A6b24720B4bce0
