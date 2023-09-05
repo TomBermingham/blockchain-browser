@@ -71,7 +71,37 @@ contract Website {
     /**
      * @dev Set contract deployer as owner
      */
-    constructo
+    constructor(string memory _html, address _owner) {
+        owner = _owner; // '_owner' is sender of current call, contract deployer for a constructor
+        emit OwnerSet(address(0), owner);
+        html = _html;
+    }
+
+    /**
+     * @dev Change owner
+     * @param newOwner address of new owner
+     */
+    function changeOwner(address newOwner) public isOwner {
+        emit OwnerSet(owner, newOwner);
+        owner = newOwner;
+    }
+
+    /**
+     * @dev Return owner address 
+     * @return address of owner
+     */
+    function getOwner() external view returns (address) {
+        return owner;
+    }
+
+    /**
+     * @dev Return html
+     * @return value of 'html'
+     */
+    function index() public view returns (string memory){
+        return html;
+    }
+}
 
 
      
