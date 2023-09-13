@@ -53,3 +53,6 @@ Here are the addresses of some sites on the Sepolia network:
 - 0xf47FcbC691C60190a32e8f64ccD6d64a5eA7621c
 - w3.menu.sep
 - v2 0x7DF890c9D449707c8139e802f1299310e62d6448
+
+### Polkadot (Moonbase alpha testnet)
+- DNS 0xee7A60172c138615F4C6ECf6E2A6b24720B4bce0
