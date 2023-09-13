@@ -57,3 +57,4 @@ Here are the addresses of some sites on the Sepolia network:
 ### Polkadot (Moonbase alpha testnet)
 - DNS 0xee7A60172c138615F4C6ECf6E2A6b24720B4bce0
 - Wallet 0x53b5D12874A77A8D3C959b6160be0fb552787c8B
+- hello.moon 0x5F6367bd603965060F1bE7D4f963ffC7b7b7C22d
