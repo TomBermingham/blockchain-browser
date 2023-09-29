@@ -54,8 +54,13 @@
 	let saving = false;
 	let newSite = false;
 	let isWebsiteAtDomain = false;
+	let networkCode;
+	let newDomain;
+
+	$: newUrl = `${newDomain}.${networkCode}`;
 
 	const loadPage = async (address) => {
+		$showSource = false;
 		isWebsiteAtDomain = false;
 
 		//if address then load page -> return
@@ -115,8 +120,10 @@
 	};
 
 	const createSite = () => {
+		const fullUrl = newSite ? newUrl : addr;
+		console.log(fullUrl);
 		saving = true;
-		network.createSite(addr, value);
+		network.createSite(fullUrl, value);
 	}
 
 	const updateSite = () => {
@@ -181,13 +188,13 @@
 					<header>
 						<div class="grow">
 							<label for="newDomain">Domain</label>
-							<input bind:value={addr} placeholder="example" id="newDomain"/>
+							<input bind:value={newDomain} placeholder="example" id="newDomain"/>
 						</div>
 						<div>
 							<label for="network">Network</label>
-							<select id="network">
+							<select bind:value={networkCode} id="network">
 								{#each network.supportedNetworks as network}
-									<option>{network.code}</option>
+									<option value={network.code}>{network.code}</option>
 								{/each}
 							</select>
 						</div>
@@ -252,7 +259,16 @@
 	}
 
 	#newDomain {
-		padding: 1em;
+		height: 3em;
+		padding: 0.8em;
+		font-size: medium;
+		line-height: 1em;
+	}
+
+	#network {
+		height: 3em;
+		padding: 0.8em;
+		line-height: 1em;
 		font-size: medium;
 	}
 
