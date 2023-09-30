@@ -17,10 +17,13 @@ const supportedNetworks = [
     {
         code: 'eth',
         name: 'Sepolia Testnet',
-        dns: '0x7DF890c9D449707c8139e802f1299310e62d6448',
+        dns: '0x9504f11C4409a82A95F306E762e4d6a69360308d',
         nodeUrl: 'https://eth-sepolia.g.alchemy.com/v2/m41vG11L6gyJJ5QkkqcU5UuG_FfCpWVc'
     },
 ]
+
+//ETH DNS2 0x7DF890c9D449707c8139e802f1299310e62d6448
+//ETH DNS3 0x9504f11C4409a82A95F306E762e4d6a69360308d
 
 //zkEVM DNS2 0xee7A60172c138615F4C6ECf6E2A6b24720B4bce0
 //zkEVM DNS3 0x013017EDC40273aa2F42cB2Bd4e879475127687B
